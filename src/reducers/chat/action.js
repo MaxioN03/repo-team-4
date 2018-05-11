@@ -4,7 +4,6 @@ export function joinChat(userId, currentUser) {
     return (dispatch) => {
         api.getUser(userId)
             .then((user) => {
-
                 let names = [user.name, currentUser.name];
                 names.sort();
                 names = names[0]+", "+names[1];
@@ -21,12 +20,10 @@ export function joinChat(userId, currentUser) {
                             });
                         });
                     });
-
                 dispatch({
                     type: "JOIN_CHAT",
                     id: room._id
                 });
-
                 dispatch({
                     type: "CHANGE_LAYOUT",
                     layout: "messagesLayout"
