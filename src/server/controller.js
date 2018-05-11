@@ -160,7 +160,7 @@ module.exports = function (db, io) {
 
         // Create room
         requestResponse(TYPES.CREATE_ROOM, async (params) => {
-            console.log("create room");
+            console.log("Create room");
             let currentUser = await userPromise;
 
             return createRoom(db, currentUser, params);
